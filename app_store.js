@@ -161,7 +161,8 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         "woman": "handleRoute2",
         "kid": "handleRoute3",
         "stores": "handleRoute4",
-        "check": "handleRoute5"
+        "check": "handleRoute5",
+        '*path':  'handleRoute1' // this is the default route
     },
     handleRoute0: function(){
         console.log('route home working');
@@ -241,31 +242,8 @@ STORE.my_objects.models.item9 = new STORE.my_constructors.models.Product({name: 
 STORE.my_objects.models.item10 = new STORE.my_constructors.models.Product({name: 'shirt10', description: 'desc10', price: 100});
 STORE.my_objects.models.item11 = new STORE.my_constructors.models.Product({name: 'shirt11', description: 'desc11', price: 110});
 
-//  creating the catalog of products
-/*
-STORE.my_objects.collections.ProductCatalog = new STORE.my_constructors.collections.Catalog();
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item1]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item2]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item3]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item4]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item5]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item6]);
-*/
-/*
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item7]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item8]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item9]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item10]);
-STORE.my_objects.collections.ProductCatalog.add([STORE.my_objects.models.item11]);
-*/
-
 //  creating the bag
 STORE.my_objects.collections.myBag = new STORE.my_constructors.collections.Bag;
-/*
- STORE.my_objects.collections.myBag.add([STORE.my_objects.models.item1]);
- STORE.my_objects.collections.myBag.add([STORE.my_objects.models.item2]);
- */
-
 
 //  creating the man, woman and kid catalogs
 STORE.my_objects.collections.Man_Catalog = new STORE.my_constructors.collections.Catalog();
@@ -292,23 +270,8 @@ STORE.my_objects.collections.Kid_Catalog.add([
 ]);
 
 
-
-/*
-STORE.my_objects.views.Woman_CatalogContainer = new STORE.my_constructors.views.CatalogContainer({collection: STORE.my_objects.collections.Woman_Catalog});
-STORE.my_objects.views.Kid_CatalogContainer = new STORE.my_constructors.views.CatalogContainer({collection: STORE.my_objects.collections.Kid_Catalog});
-*/
-
-/*STORE.my_objects.views.Man_CatalogContainer.render();*/
-/*
-STORE.my_objects.views.Woman_CatalogContainer.render();
-STORE.my_objects.views.Kid_CatalogContainer.render();
-*/
-
-/*STORE.my_objects.views.CatalogContainer.render();*/
-//STORE.my_objects.views.SingleProduct = new STORE.my_constructors.views.SingleProduct(); //TODO test if we can remove this line, I am also instantiating during render();
 STORE.my_objects.views.BagSummary = new STORE.my_constructors.views.ShoppingCartSummary;
 
-/*STORE.my_objects.views.BagTotals = new STORE.my_constructors.views.Total();*/
 
 console.log(_.size(STORE.my_objects.collections.Man_Catalog));
 console.log(_.size(STORE.my_objects.collections.Woman_Catalog));
@@ -319,78 +282,3 @@ console.log(_.size(STORE.my_objects.collections.myBag));
 
 STORE.my_objects.router.StoreRouter = new STORE.my_constructors.router.AppRouter;
 Backbone.history.start(); //    this line is necessary for the router to work
-
-
-
-
-
-/*// instantiating the bag
- STORE.my_objects.collections.myBag = new STORE.my_constructors.collections.Bag;
- STORE.my_objects.collections.myBag.add([STORE.my_objects.models.item1]);
- STORE.my_objects.collections.myBag.add([STORE.my_objects.models.item2]);
- STORE.my_objects.collections.myBag.add([STORE.my_objects.models.item3]);*/
-
-
-
-
-
-
-
-
-/*
- STORE.shop = new STORE.views.ShoppingCartSummary();
- STORE.shop.render();
-
- STORE.cart2 = new STORE.views.ShoppingCartItem();
- STORE.cart2.render();
-
- STORE.views.cart_product_view = Backbone.View.extend({
-
- tagName: 'li',
- initialize: function(){
- console.log('The cart_product_view view has been initialized');
- this.render();
- },
- template: _.template("<p>massimo</p>"),
- render: function(){
- console.log('Product View Render STARTED');
- this.$el.html(this.template);
- console.log('Product View Render FINISHED');
- return this;
- }
- });
-
-
- *//*
-
- /*here I am creating a few product so we can then create a collection and add them to it*//*
-
-
-
- here I am creating the collection mentioned before that is going to filled with the above products
-
- STORE.list = new STORE.collections.product_list;
-
- here I am creating the shopping cart collection which will hold all the clicked elements from the catalog
-
- STORE.CART = new STORE.collections.shopping_cart;
-
- STORE.list.add(STORE.item1);
- STORE.list.add(STORE.item2);
- STORE.list.add(STORE.item3);
- STORE.list.add(STORE.item4);
- STORE.list.add(STORE.item5);
-
- STORE.catalog = new STORE.views.product_list();
- STORE.catalog.render();
-
- STORE.test_products = [
- { title: 'Bacon', price: 2.99 },
- { title: 'Cabbage' },
- { title: 'Spinach', price: 1.40 },
- { title: 'Salt', price: 0.88 },
- { title: 'Bread' },
- { title: 'Butter', price : 1.99 },
- { title: 'Bread', price : 5.99 }
- ];
- */
