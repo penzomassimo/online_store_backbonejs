@@ -217,11 +217,26 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     },
     handleRoute5: function(){
         console.log('route checkout working');
-        var request = $.ajax("http://api.openweathermap.org/data/2.5/forecast/city?id=2172797&APPID=1111111111");
-        request.done(function(){
-            console.log('Weather Request Completed');
+        //  GET request
+        var request1 = $.ajax("http://api.openweathermap.org/data/2.5/forecast/city?id=2172797&APPID=1111111111");
+        request1.done(function(){
+            console.log('Request 1 Completed');
             STORE.my_objects.views.Checkout = new STORE.my_constructors.views.TestView({el: '#shopping_container'});
         });
+        //  POST request
+        var data_test = JSON.stringify(STORE.my_objects.collections.myBag.toJSON());
+        console.log(data_test);
+        var request2 = $.ajax(
+            {
+                url:"http://api.openweathermap.org/data/2.5/forecast/city?id=2172797&APPID=1111111111",
+                type: 'POST',
+                data: data_test
+            }
+        );
+        request2.done(function(){
+            console.log('Request 2 Completed');
+        });
+
     }
 });
 

@@ -1,7 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Anton);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 * {
     box-sizing: border-box;
 }
+
+a {
+    outline: 0; /*removes the dotted box around the links*/
+}
+
 
 body {
     background-color: #fbfbfb;
@@ -105,7 +111,7 @@ body {
 
 
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
 
 }
 
