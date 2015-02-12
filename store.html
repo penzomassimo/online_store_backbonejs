@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles_store.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css"/>
+    <title></title>
+</head>
+<body>
+
+
+
+<div id="header">
+    <div id="logo">- dSHIRTS -</div>
+    <div id="user_session">
+        <div id="bag">bag:</div>
+        <div id="wishList">wishlist:</div>
+    </div>
+</div>
+
+
+<div id="left">
+    <div class="menu_item"><a href="#man">Shop Man</a></div>
+    <div class="menu_item"><a href="#woman">Shop Woman</a></div>
+    <div class="menu_item"><a href="#kid">Shop Kid</a></div>
+    <div class="menu_item"><a href="#stores">Stores</a></div>
+    <div id="shopping_title">
+        <div id="title_left">BAG:</div>
+        <div id="checkout"><a href="#check">checkout</a></div>
+    </div>
+    <div id="shopping_container"></div>
+</div>
+
+<div id="right"></div>
+
+
+
+
+<!--TEMPLATES-->
+
+
+<script type="text/template" id="map_template">
+    <div id="map"></div>
+</script>
+
+
+<script type="text/template" id="bag_item">
+    <div class="cart_item">
+        <div class="bag_item_name"><%= name %></div>
+        <div class="bag_item_qty">qty</div>
+        <div class="bag_item_price">$<%= price %></div>
+        <div class="remove_item">rmv</div>
+    </div>
+</script>
+
+
+<script type="text/template" id="product_template">
+    <div class="product animated bounceInUp">
+        <div class="picture">
+            <div class="add">FEATURED</div>
+            <img src="assets/woman_shirt.jpg" alt=""/>
+        </div>
+        <div class="details">
+            <div class="name"><%= name %> - <%= description %></div>
+            <div class="price animated flash">$<%= price %></div>
+        </div>
+    </div>
+</script>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/leaflet/dist/leaflet.js"></script>
+<script src="app_store.js"></script>
+
+</body>
+</html>

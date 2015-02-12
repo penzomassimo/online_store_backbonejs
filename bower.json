@@ -1,0 +1,21 @@
+{
+  "name": "tshirt_store",
+  "version": "0.0.0",
+  "authors": [
+    "Massimo Penzo <penzo.massimo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "daneden/animate.css#~3.2.0",
+    "jquery": "~2.1.3",
+    "leaflet": "Leaflet/Leaflet#~0.7.3",
+    "backbone": "~1.1.2"
+  }
+}

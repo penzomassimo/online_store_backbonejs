@@ -1,0 +1,701 @@
+@import url(http://fonts.googleapis.com/css?family=Anton);
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fbfbfb;
+}
+
+#header {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50px;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    background-color: #ffffff;
+
+}
+
+
+#left {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 20%;
+
+    /*box model*/
+    margin: 5px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+}
+
+#right {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 75%;
+
+    /*box model*/
+    margin: 5px 0px 0px 5px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+}
+
+#logo {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 50%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+
+}
+
+#user_session {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 30%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*font-size: 40px;*/
+}
+
+.product {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 300px;
+
+    /*box model*/
+    margin: 20px 0px 0px 20px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    background-color: #ffffff;
+
+}
+
+.picture {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 90%;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    /*background-color: #ffffff;*/
+
+}
+
+.details {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50px;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    background-color: #ffffff;
+}
+
+.price {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 30%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    background-color: #ffffff;
+    font-family: 'Anton', sans-serif;
+    text-align: left;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.name {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 65%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    background-color: #ffffff;
+    font-family: 'Anton', sans-serif;
+    text-align: left;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#bag {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 30%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*font-size: 40px;*/
+}
+
+#wishList {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 30%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*font-size: 40px;*/
+
+}
+
+.menu_item {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50px;
+    width: 100%;
+
+    /*box model*/
+    margin: 5px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 11px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    /*background-color: #ffffff;*/
+    /*font-size: 40px;*/
+
+}
+
+.add {
+    /*positioning*/
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+    z-index: 5;
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 30px;
+    width: 80px;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    background-color: lime;
+    text-align: center;
+    /*font-size: 40px;*/
+}
+
+
+#map {
+    height: 800px;
+    width: 100%;
+      float: left;
+}
+
+#shopping_container {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    /*font-size: 40px;*/
+
+}
+
+#shopping_title {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50px;
+    width: 100%;
+
+    /*box model*/
+    margin: 5px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-decoration: underline;
+    /*font-size: 40px;*/
+
+}
+
+.cart_item {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 100%;
+
+    /*box model*/
+    margin: 5px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    border-bottom: 1px dashed;
+    padding: 0px 0px 0px 0px;
+
+
+
+    font-family: 'Anton', sans-serif;
+/*    background-color: #ffffff;*/
+    /*font-size: 40px;*/
+
+}
+
+.bag_item_name {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 25px;
+    width: 30%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    /*font-size: 40px;*/
+
+}
+
+.bag_item_qty {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 25px;
+    width: 20%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+/*    border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-align: center;
+    /*font-size: 40px;*/
+}
+
+.bag_item_price {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 25px;
+    width: 20%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+/*    border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-align: center;
+    /*font-size: 40px;*/
+}
+
+.remove_item {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 25px;
+    width: 20%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 10px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-align: right;
+    color: deeppink;
+    /*font-size: 40px;*/
+}
+
+#title_left {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 50%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 10px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-align: left;
+    text-decoration: underline;
+
+    font-size: 25px;
+
+
+}
+
+#checkout {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 40%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 10px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+    text-align: right;
+    color: orangered;
+    /*font-size: 40px;*/
+
+}
+
+
+#bag_total {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 25px;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    border: 1px dotted #000000;
+    padding: 0px 10px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+    background-color: #ffffff;
+    text-align: right;
+    color: #0078A8;
+    /*font-size: 40px;*/
+
+
+}
