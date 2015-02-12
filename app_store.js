@@ -41,7 +41,6 @@ STORE.my_constructors.collections.Catalog = Backbone.Collection.extend({
         console.log('A new list of products has been created')
     }
 });
-
 STORE.my_constructors.collections.Bag = Backbone.Collection.extend({
     model: STORE.my_constructors.models.Product,
     initialize: function(){
@@ -68,7 +67,6 @@ STORE.my_constructors.views.CatalogContainer = Backbone.View.extend({
         }, this);
     }
 });
-
 STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
     initialize: function(){
         this.render();
@@ -88,7 +86,6 @@ STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
         STORE.my_objects.views.BagSummary.render();
     }
 });
-
 STORE.my_constructors.views.ShoppingCartSummary = Backbone.View.extend({
     el: '#shopping_container',
     initialize: function(){
@@ -104,7 +101,6 @@ STORE.my_constructors.views.ShoppingCartSummary = Backbone.View.extend({
         }, this);
     }
 });
-
 STORE.my_constructors.views.ShoppingCartItem = Backbone.View.extend({
     initialize: function(){
         this.render();
@@ -131,7 +127,6 @@ STORE.my_constructors.views.ShoppingCartItem = Backbone.View.extend({
         console.log('qty increased');   //TODO this still needs some work.
     }
 });
-
 STORE.my_constructors.views.TestView = Backbone.View.extend({
     initialize: function(){
         this.render();
@@ -141,7 +136,6 @@ STORE.my_constructors.views.TestView = Backbone.View.extend({
         return this;
     }
 });
-
 STORE.my_constructors.views.Map = Backbone.View.extend({
     initialize: function(){
         this.render();
@@ -260,7 +254,7 @@ STORE.my_objects.models.item11 = new STORE.my_constructors.models.Product({name:
 //  creating the bag
 STORE.my_objects.collections.myBag = new STORE.my_constructors.collections.Bag;
 
-//  creating the man, woman and kid catalogs
+//  creating the man, woman and kid catalogs collections
 STORE.my_objects.collections.Man_Catalog = new STORE.my_constructors.collections.Catalog();
 STORE.my_objects.collections.Woman_Catalog = new STORE.my_constructors.collections.Catalog();
 STORE.my_objects.collections.Kid_Catalog = new STORE.my_constructors.collections.Catalog();
