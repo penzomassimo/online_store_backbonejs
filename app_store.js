@@ -1,4 +1,5 @@
 
+
 //  DEFINING NAMESPACE FOR THE APP
 var STORE = {
     my_constructors: {
@@ -212,7 +213,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     handleRoute5: function(){
         console.log('route checkout working');
         //  GET request
-        var request1 = $.ajax("http://api.openweathermap.org/data/2.5/forecast/city?id=2172797&APPID=1111111111");
+        var request1 = $.ajax("http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog");
         request1.done(function(){
             console.log('Request 1 Completed');
             STORE.my_objects.views.Checkout = new STORE.my_constructors.views.TestView({el: '#shopping_container'});
@@ -243,8 +244,6 @@ STORE.my_objects.models.item3 = new STORE.my_constructors.models.Product({name: 
 STORE.my_objects.models.item4 = new STORE.my_constructors.models.Product({name: 'shirt4', description: 'desc4', price: 40});
 STORE.my_objects.models.item5 = new STORE.my_constructors.models.Product({name: 'shirt5', description: 'desc5', price: 50});
 STORE.my_objects.models.item6 = new STORE.my_constructors.models.Product({name: 'shirt6', description: 'desc6', price: 60});
-
-
 STORE.my_objects.models.item7 = new STORE.my_constructors.models.Product({name: 'shirt7', description: 'desc7', price: 70});
 STORE.my_objects.models.item8 = new STORE.my_constructors.models.Product({name: 'shirt8', description: 'desc8', price: 80});
 STORE.my_objects.models.item9 = new STORE.my_constructors.models.Product({name: 'shirt9', description: 'desc9', price: 90});
@@ -291,3 +290,27 @@ console.log(_.size(STORE.my_objects.collections.myBag));
 
 STORE.my_objects.router.StoreRouter = new STORE.my_constructors.router.AppRouter;
 Backbone.history.start(); //    this line is necessary for the router to work
+
+
+var isa = $.ajax(
+    {
+        url:"http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog",
+        type: 'GET',
+        dataType: 'json', // the type of data you are expecting from the server
+        data: {                 //  parameters to be sent with the request
+            name : "The name",
+            desc : "The description"
+        }
+    }
+);
+
+isa.done(function(data){
+    STORE.my_objects.collections.TESTCAT = new STORE.my_constructors.collections.Catalog();
+    STORE.my_objects.collections.TESTCAT.add(data);
+    console.log(data);
+});
+
+isa.done(function(data){
+    STORE.my_objects.collections.Man_Catalog.add(data);
+    console.log(data);
+});
