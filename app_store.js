@@ -1,5 +1,4 @@
 
-
 //  DEFINING NAMESPACE FOR THE APP
 var STORE = {
     my_constructors: {
@@ -198,12 +197,16 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     handleRoute4: function(){
         STORE.my_objects.views.myMap = new STORE.my_constructors.views.Map({el: '#right'});
         STORE.my_objects.map = L.map('map').setView([51.505, -0.09], 8);
-        var Stamen_TonerLite = L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-            attribution: '',
-            subdomains: 'abcd',
-            minZoom: 0,
-            maxZoom: 20
-        }).addTo(STORE.my_objects.map);
+
+        L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png',
+            {
+                attribution: '',
+                subdomains: 'abcd',
+                minZoom: 0,
+                maxZoom: 20
+            }
+        ).addTo(STORE.my_objects.map);
+
         L.marker([51.5, -0.09]).addTo(STORE.my_objects.map);
         L.marker([52.0, -0.20]).addTo(STORE.my_objects.map);
         L.marker([51.0, -0.20]).addTo(STORE.my_objects.map);
@@ -314,3 +317,21 @@ isa.done(function(data){
     STORE.my_objects.collections.Man_Catalog.add(data);
     console.log(data);
 });
+
+
+//GEOLOCATION TEST
+if ("geolocation" in navigator) {
+    console.log('we have geolocation services');
+    /* geolocation is available */
+} else {
+    console.log('no geo');
+}
+navigator.geolocation.getCurrentPosition(success, error);
+function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log('Latitude is ' + latitude + '° Longitude is ' + longitude + '°');
+};
+function error() {
+    console.log('unable to find coordinates');
+};
