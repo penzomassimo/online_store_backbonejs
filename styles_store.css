@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Anton);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
 * {
     box-sizing: border-box;
 }
@@ -7,6 +9,29 @@
 a {
     outline: 0; /*removes the dotted box around the links*/
     cursor: pointer;
+}
+
+/* unvisited link */
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #000000;
+    text-decoration: dashed;
+}
+
+/* mouse over link */
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: #000000;
 }
 
 
@@ -27,7 +52,7 @@ body {
     display: block; /*default display for div tags*/
 
     /*size*/
-    height: 50px;
+    height: auto;
     width: 100%;
 
     /*box model*/
@@ -59,7 +84,7 @@ body {
 
     /*box model*/
     margin: 5px 0px 0px 0px;
-    border: 1px dotted #000000;
+    /*border: 1px dotted #000000;*/
     padding: 0px 0px 0px 0px;
 
 }
@@ -83,7 +108,7 @@ body {
 
     /*box model*/
     margin: 5px 0px 0px 5px;
-    border: 1px dotted #000000;
+    /*border: 1px dotted #000000;*/
     padding: 0px 0px 0px 0px;
 
 }
@@ -111,8 +136,9 @@ body {
     padding: 0px 0px 0px 0px;
 
 
-    font-family: 'Anton', sans-serif;
-    font-size: 30px;
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    text-align: right;
 
 }
 
@@ -273,7 +299,7 @@ body {
 
     background-color: #ffffff;
     font-family: 'Anton', sans-serif;
-    text-align: left;
+    text-align: center;
 
 }
 
@@ -381,7 +407,7 @@ img {
     display: block; /*default display for div tags*/
 
     /*size*/
-    height: 30px;
+    height: 25px;
     width: 80px;
 
     /*box model*/
@@ -393,6 +419,7 @@ img {
     font-family: 'Anton', sans-serif;
     background-color: lime;
     text-align: center;
+    border-bottom-right-radius: 10px;
     /*font-size: 40px;*/
 }
 
@@ -755,7 +782,8 @@ img {
 
     /*box model*/
     margin: 5px 0px 0px 5px;
-    border: 1px dotted #000000;
+    /*border: 1px dotted #000000;*/
+
     padding: 0px 0px 0px 0px;
 
     font-family: 'Anton', sans-serif;

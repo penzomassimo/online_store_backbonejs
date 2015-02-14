@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles_store.css"/>
     <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
-    <link rel="stylesheet" href="bower_components/Hover.css/css/hover.css"/>
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css"/>
     <title>* tshirts</title>
 </head>
@@ -13,7 +12,7 @@
 
 
 <div id="header">
-    <div id="logo"><a href="#">tshirts</a></div>
+    <div id="logo"><a href="#">myShirts</a></div>
     <div id="user_session">
         <div id="bag">bag:</div>
         <div id="wishList">wishlist:</div>
@@ -42,15 +41,11 @@
 <!--TEMPLATES-->
 
 <script type="text/template" id="quick_view_template">
-    <div>
-        <p class="animated bounceInDown"><%= name %></p>
+    <div class="animated bounceInRight">
+        <div><%= name %></div>
+        <div>$_<%= price %></div>
+        <div><%= description %></div>
     </div>
-    <p class="animated bounceInDown"><%= name %></p>
-    <p class="animated bounceInDown"><%= name %></p>
-    <p class="animated bounceInDown"><%= name %></p>
-    <p class="animated bounceInDown"><%= name %></p>
-    <p class="animated bounceInDown"><%= name %></p>
-
 </script>
 
 
@@ -70,7 +65,7 @@
 
 
 <script type="text/template" id="product_template">
-    <div class="product animated bounceInUp hvr-shadow">
+    <div class="product animated bounceInUp">
         <div class="picture">
             <div class="add">ADD 2 BAG</div>
             <img src="assets/woman_shirt.jpg" alt=""/>
@@ -79,7 +74,7 @@
             </div>
         </div>
         <div class="details">
-            <div class="name"><%= name %> - <%= description %></div>
+            <div class="name"><%= name %></div>
             <div class="price animated flash">$<%= price %></div>
         </div>
     </div>
