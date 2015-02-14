@@ -6,6 +6,7 @@
 
 a {
     outline: 0; /*removes the dotted box around the links*/
+    cursor: pointer;
 }
 
 
@@ -58,7 +59,7 @@ body {
 
     /*box model*/
     margin: 5px 0px 0px 0px;
-    /*border: 1px dotted #000000;*/
+    border: 1px dotted #000000;
     padding: 0px 0px 0px 0px;
 
 }
@@ -78,11 +79,11 @@ body {
 
     /*size*/
     height: auto;
-    width: 75%;
+    width: 53%;
 
     /*box model*/
     margin: 5px 0px 0px 5px;
-    /*border: 1px dotted #000000;*/
+    border: 1px dotted #000000;
     padding: 0px 0px 0px 0px;
 
 }
@@ -160,7 +161,7 @@ body {
     width: 300px;
 
     /*box model*/
-    margin: 20px 0px 0px 20px;
+    margin: 5px 0px 0px 20px;
     /*border: 1px dotted #000000;*/
     padding: 0px 0px 0px 0px;
 
@@ -702,6 +703,64 @@ img {
     text-align: right;
     color: #0078A8;
     /*font-size: 40px;*/
+
+
+}
+
+.quick_view {
+    /*positioning*/
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /*bottom: 0px;*/
+    /*left: 0px;*/
+    /*float: right;*/
+    z-index: 5;
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50px;
+    width: 50px;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: 'Anton', sans-serif;
+
+    text-align: center;
+    /*font-size: 40px;*/
+}
+
+#quick {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 800px;
+    width: 25%;
+
+    /*box model*/
+    margin: 5px 0px 0px 5px;
+    border: 1px dotted #000000;
+    padding: 0px 0px 0px 0px;
+
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+
 
 
 }

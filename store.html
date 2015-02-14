@@ -34,11 +34,24 @@
 </div>
 
 <div id="right"></div>
+<div id="quick"></div>
 
 
 
 
 <!--TEMPLATES-->
+
+<script type="text/template" id="quick_view_template">
+    <div>
+        <p class="animated bounceInDown"><%= name %></p>
+    </div>
+    <p class="animated bounceInDown"><%= name %></p>
+    <p class="animated bounceInDown"><%= name %></p>
+    <p class="animated bounceInDown"><%= name %></p>
+    <p class="animated bounceInDown"><%= name %></p>
+    <p class="animated bounceInDown"><%= name %></p>
+
+</script>
 
 
 <script type="text/template" id="map_template">
@@ -59,8 +72,11 @@
 <script type="text/template" id="product_template">
     <div class="product animated bounceInUp hvr-shadow">
         <div class="picture">
-            <div class="add">FEATURED</div>
+            <div class="add">ADD 2 BAG</div>
             <img src="assets/woman_shirt.jpg" alt=""/>
+            <div class="quick_view">
+                <img src="assets/quick_view.gif" alt=""/>
+            </div>
         </div>
         <div class="details">
             <div class="name"><%= name %> - <%= description %></div>

@@ -77,13 +77,37 @@ STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
         return this;
     },
     events: {
-        'click' : 'addToBag'
+        'click .add': 'addToBag',
+        'click .quick_view': 'showQuickView'
     },
     addToBag: function(){
+        this.$el.fadeTo( "slow" , 0.5, function() {
+            // Animation complete.
+            console.log('animation complete');
+        });
         console.log('I have been added to the cart');
         STORE.my_objects.collections.myBag.add([this.model]);
         STORE.my_objects.views.BagSummary.$el.html('');
         STORE.my_objects.views.BagSummary.render();
+    },
+    showQuickView: function(){
+        STORE.my_objects.views.Quick_view = new STORE.my_constructors.views.QuickLook(
+            {
+                el: '#quick',
+                model: this.model
+            }
+        );
+        console.log('QUICK VIEW HAS BEEN ACTIVATED');
+    }
+});
+STORE.my_constructors.views.QuickLook = Backbone.View.extend({
+    initialize: function(){
+        this.render();
+    },
+    template: _.template($("#quick_view_template").html()),
+    render: function(){
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
     }
 });
 STORE.my_constructors.views.ShoppingCartSummary = Backbone.View.extend({
@@ -132,7 +156,7 @@ STORE.my_constructors.views.TestView = Backbone.View.extend({
         this.render();
     },
     render: function(){
-        this.$el.html('<p class="animated bounceInLeft">hello test</p> <p class="animated bounceInLeft">hello test</p>');
+        this.$el.html('<p>hello test</p> <p>hello test</p>');
         return this;
     }
 });
@@ -320,9 +344,12 @@ isa.done(function(data){
 
 
 //GEOLOCATION TEST
+/*
 if ("geolocation" in navigator) {
     console.log('we have geolocation services');
-    /* geolocation is available */
+    */
+/* geolocation is available *//*
+
 } else {
     console.log('no geo');
 }
@@ -334,4 +361,4 @@ function success(position) {
 };
 function error() {
     console.log('unable to find coordinates');
-};
+};*/
