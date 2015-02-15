@@ -206,6 +206,12 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
                 credit_card_number: $("[name='creditcard']").val()
             }
         );
+
+        var purchase_order = {
+            customer: STORE.my_objects.models.FormData,
+            products: STORE.my_objects.collections.myBag
+        };
+
         console.log(JSON.stringify(STORE.my_objects.models.FormData.toJSON()));
         var sendRequest = $.ajax(
             {
@@ -213,7 +219,7 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
                 type: 'post',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
-                data: JSON.stringify(STORE.my_objects.models.FormData.toJSON())
+                data: JSON.stringify(purchase_order)
             }
         );
 
