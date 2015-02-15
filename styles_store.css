@@ -427,7 +427,7 @@ img {
 #map {
     height: 800px;
     width: 100%;
-      float: left;
+    float: left;
 }
 
 #shopping_container {
@@ -515,7 +515,7 @@ img {
 
 
     font-family: 'Anton', sans-serif;
-/*    background-color: #ffffff;*/
+    /*    background-color: #ffffff;*/
     /*font-size: 40px;*/
 
 }
@@ -568,7 +568,7 @@ img {
 
     /*box model*/
     margin: 0px 0px 0px 0px;
-/*    border: 1px dotted #000000;*/
+    /*    border: 1px dotted #000000;*/
     padding: 0px 0px 0px 0px;
 
 
@@ -597,7 +597,7 @@ img {
 
     /*box model*/
     margin: 0px 0px 0px 0px;
-/*    border: 1px dotted #000000;*/
+    /*    border: 1px dotted #000000;*/
     padding: 0px 0px 0px 0px;
 
 
@@ -790,5 +790,70 @@ img {
     font-size: 50px;
 
 
+
+}
+
+#form_wrapper {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 300px;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    font-family: 'Anton', sans-serif;
+
+}
+
+.form_input {
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+}
+
+#order_btn {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 30px;
+    width: 50%;
+
+    /*box model*/
+    margin: 20px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 7px;
 
 }

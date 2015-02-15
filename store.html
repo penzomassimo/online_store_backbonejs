@@ -40,6 +40,20 @@
 
 <!--TEMPLATES-->
 
+<script type="text/template" id="checkout_form_template">
+    <div id="form_wrapper" class="animated bounceInLeft">
+        <div>Name:</div>
+        <div><input type="text" class="form_input"/></div>
+        <div>Last Name:</div>
+        <div><input type="text" class="form_input"/></div>
+        <div>Email:</div>
+        <div><input type="text" class="form_input"/></div>
+        <div>Phone number:</div>
+        <div><input type="text" class="form_input"/></div>
+        <div id="order_btn">Place Order</div>
+    </div>
+</script>
+
 <script type="text/template" id="quick_view_template">
     <div class="animated bounceInRight">
         <div><%= name %></div>
@@ -48,11 +62,9 @@
     </div>
 </script>
 
-
 <script type="text/template" id="map_template">
     <div id="map"></div>
 </script>
-
 
 <script type="text/template" id="bag_item">
     <div class="cart_item">
@@ -62,7 +74,6 @@
         <div class="remove_item">remove</div>
     </div>
 </script>
-
 
 <script type="text/template" id="product_template">
     <div class="product animated bounceInUp">

@@ -171,6 +171,18 @@ STORE.my_constructors.views.Map = Backbone.View.extend({
     }
 });
 
+STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
+    el: '#shopping_container',
+    initialize: function(){
+        this.render();
+    },
+    template: _.template($("#checkout_form_template").html()),
+    render: function(){
+        this.$el.html(this.template);
+        return this;
+    }
+});
+
 //  ROUTER
 STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     routes: {
@@ -243,7 +255,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         var request1 = $.ajax("http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog");
         request1.done(function(){
             console.log('Request 1 Completed');
-            STORE.my_objects.views.Checkout = new STORE.my_constructors.views.TestView({el: '#shopping_container'});
+            STORE.my_objects.views.Checkout = new STORE.my_constructors.views.CheckoutForm();
         });
         //  POST request
         var data_test = JSON.stringify(STORE.my_objects.collections.myBag.toJSON());
