@@ -857,3 +857,7 @@ img {
     border-radius: 7px;
 
 }
+
+.follow_scroll {
+    position: fixed;
+}

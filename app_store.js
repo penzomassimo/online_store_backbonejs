@@ -31,6 +31,18 @@ STORE.my_constructors.models.Product = Backbone.Model.extend({
         quantity: 1
     }
 });
+STORE.my_constructors.models.CheckoutFormData = Backbone.Model.extend({
+    initialize: function(){
+        console.log('THE FORM DATA OBJECT HAS BEEN CREATED');
+    },
+    defaults: {
+        name: 'NO NAME',
+        last_name: 'NO LAST NAME',
+        email: 'NO EMAIL',
+        phone_number: 'NO PHONE NUMBER',
+        credit_card_number: 'NO CREDIT CARD NUMBER'
+    }
+});
 
 //  COLLECTIONS
 
@@ -170,7 +182,6 @@ STORE.my_constructors.views.Map = Backbone.View.extend({
         this.$el.html(this.template);
     }
 });
-
 STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
     el: '#shopping_container',
     initialize: function(){
@@ -180,6 +191,35 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template);
         return this;
+    },
+    events: {
+        'click #order_btn': 'sendOrderData'
+    },
+    sendOrderData: function(){
+
+        STORE.my_objects.models.FormData.set(
+            {
+                name: $("[name='name']").val(),
+                last_name: $("[name='lastname']").val(),
+                email: $("[name='email']").val(),
+                phone_number: $("[name='phone']").val(),
+                credit_card_number: $("[name='creditcard']").val()
+            }
+        );
+        console.log(JSON.stringify(STORE.my_objects.models.FormData.toJSON()));
+        var sendRequest = $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/send_email",
+                type: 'post',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: JSON.stringify(STORE.my_objects.models.FormData.toJSON())
+            }
+        );
+
+        sendRequest.done(function(){
+            console.log('AJAX DATA HAS BEEN SENT TO THE WEB SERVICE');
+        });
     }
 });
 
@@ -319,6 +359,8 @@ STORE.my_objects.collections.Kid_Catalog.add([
 
 STORE.my_objects.views.BagSummary = new STORE.my_constructors.views.ShoppingCartSummary;
 
+//  creating the form data object
+STORE.my_objects.models.FormData = new STORE.my_constructors.models.CheckoutFormData;
 
 console.log(_.size(STORE.my_objects.collections.Man_Catalog));
 console.log(_.size(STORE.my_objects.collections.Woman_Catalog));
@@ -357,20 +399,20 @@ isa.done(function(data){
 
 //GEOLOCATION TEST
 /*
-if ("geolocation" in navigator) {
-    console.log('we have geolocation services');
-    */
+ if ("geolocation" in navigator) {
+ console.log('we have geolocation services');
+ */
 /* geolocation is available *//*
 
-} else {
-    console.log('no geo');
-}
-navigator.geolocation.getCurrentPosition(success, error);
-function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    console.log('Latitude is ' + latitude + '° Longitude is ' + longitude + '°');
-};
-function error() {
-    console.log('unable to find coordinates');
-};*/
+ } else {
+ console.log('no geo');
+ }
+ navigator.geolocation.getCurrentPosition(success, error);
+ function success(position) {
+ var latitude  = position.coords.latitude;
+ var longitude = position.coords.longitude;
+ console.log('Latitude is ' + latitude + '° Longitude is ' + longitude + '°');
+ };
+ function error() {
+ console.log('unable to find coordinates');
+ };*/
