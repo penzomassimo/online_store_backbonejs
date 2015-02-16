@@ -12,7 +12,8 @@ var STORE = {
         collections: {},
         views: {},
         router: {}
-    }
+    },
+    my_functions:{}
 };
 
 
@@ -28,7 +29,7 @@ STORE.my_constructors.models.Product = Backbone.Model.extend({
         description: 'NO DESCRIPTION',
         price: 'NO PRICE',
         category: 'NO CATEGORY', //  men, woman, kid
-        quantity: 1
+        quantity: 0
     }
 });
 STORE.my_constructors.models.CheckoutFormData = Backbone.Model.extend({
@@ -93,12 +94,22 @@ STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
         'click .quick_view': 'showQuickView'
     },
     addToBag: function(){
-        this.$el.fadeTo( "slow" , 0.5, function() {
-            // Animation complete.
-            console.log('animation complete');
-        });
-        console.log('I have been added to the cart');
-        STORE.my_objects.collections.myBag.add([this.model]);
+        this.$el.fadeTo( "slow" , 0.5, function() {});
+        if (STORE.my_objects.collections.myBag.contains(this.model)){
+            /*increase quantity property*/
+            var index = _.indexOf(STORE.my_objects.collections.myBag.models, this.model);
+            var prevQTY = STORE.my_objects.collections.myBag.models[index].get('quantity');
+            var newQTY = prevQTY + 1;
+            STORE.my_objects.collections.myBag.models[index].set('quantity',newQTY);
+            console.log('the product is already in the bag');
+        } else {
+            STORE.my_objects.collections.myBag.add([this.model]);
+            var index = _.indexOf(STORE.my_objects.collections.myBag.models, this.model);
+            var prevQTY = STORE.my_objects.collections.myBag.models[index].get('quantity');
+            var newQTY = prevQTY + 1;
+            STORE.my_objects.collections.myBag.models[index].set('quantity',newQTY);
+            console.log('A new product has been added to the Bag');
+        }
         STORE.my_objects.views.BagSummary.$el.html('');
         STORE.my_objects.views.BagSummary.render();
     },
@@ -196,7 +207,6 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
         'click #order_btn': 'sendOrderData'
     },
     sendOrderData: function(){
-
         STORE.my_objects.models.FormData.set(
             {
                 name: $("[name='name']").val(),
@@ -206,26 +216,22 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
                 credit_card_number: $("[name='creditcard']").val()
             }
         );
-
         var purchase_order = {
             customer: STORE.my_objects.models.FormData,
             products: STORE.my_objects.collections.myBag
         };
-
         console.log(JSON.stringify(STORE.my_objects.models.FormData.toJSON()));
-        var sendRequest = $.ajax(
+        $.ajax(
             {
                 url:"http://localhost:8080/max/webapi/storeRESTendpoint/send_email",
-                type: 'post',
+                type: 'POST',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 data: JSON.stringify(purchase_order)
             }
         );
-
-        sendRequest.done(function(){
-            console.log('AJAX DATA HAS BEEN SENT TO THE WEB SERVICE');
-        });
+        this.$el.html('Your order has been placed');
+        /*STORE.my_objects.views.BagSummary.render();*/
     }
 });
 
@@ -390,6 +396,8 @@ var isa = $.ajax(
         }
     }
 );
+
+
 
 isa.done(function(data){
     STORE.my_objects.collections.TESTCAT = new STORE.my_constructors.collections.Catalog();
