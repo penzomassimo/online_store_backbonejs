@@ -26,7 +26,7 @@
     <div class="menu_item"><a href="#kid">Shop Kid</a></div>
     <div class="menu_item"><a href="#stores">Stores</a></div>
     <div id="shopping_title">
-        <div id="title_left">YOUR BAG:</div>
+        <div id="title_left">BAG:</div>
         <div id="checkout"><a href="#check">checkout</a></div>
     </div>
     <div id="shopping_container"></div>
@@ -56,13 +56,31 @@
     </div>
 </script>
 
+
+
+
+
+
+
+
 <script type="text/template" id="quick_view_template">
-    <div class="animated bounceInRight follow_scroll">
+    <div class="quick_data animated bounceInRight">
+        <div id="quick_view_picture">
+            <img class="zoom" src="assets/woman_shirt.jpg" alt=""/>
+        </div>
         <div><%= name %></div>
         <div>$_<%= price %></div>
         <div><%= description %></div>
     </div>
 </script>
+
+
+
+
+
+
+
+
 
 <script type="text/template" id="map_template">
     <div id="map"></div>
@@ -95,6 +113,7 @@
 
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/OKZoom/src/okzoom.js"></script>
 <script src="bower_components/underscore/underscore-min.js"></script>
 <script src="bower_components/backbone/backbone.js"></script>
 <script src="bower_components/leaflet/dist/leaflet.js"></script>

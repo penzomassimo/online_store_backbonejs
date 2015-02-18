@@ -104,7 +104,7 @@ body {
 
     /*size*/
     height: auto;
-    width: 53%;
+    width: 46%;
 
     /*box model*/
     margin: 5px 0px 0px 5px;
@@ -184,7 +184,7 @@ body {
 
     /*size*/
     height: auto;
-    width: 300px;
+    width: 250px;
 
     /*box model*/
     margin: 5px 0px 0px 20px;
@@ -419,7 +419,8 @@ img {
     font-family: 'Anton', sans-serif;
     background-color: lime;
     text-align: center;
-    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    /*border-bottom-right-radius: 10px;*/
     /*font-size: 40px;*/
 }
 
@@ -634,6 +635,7 @@ img {
     /*background-color: #ffffff;*/
     text-align: right;
     color: deeppink;
+    cursor: pointer;
     /*font-size: 40px;*/
 }
 
@@ -758,7 +760,7 @@ img {
 
 
     font-family: 'Anton', sans-serif;
-
+    cursor: pointer;
     text-align: center;
     /*font-size: 40px;*/
 }
@@ -778,7 +780,7 @@ img {
 
     /*size*/
     height: 800px;
-    width: 25%;
+    width: 30%;
 
     /*box model*/
     margin: 5px 0px 0px 5px;
@@ -860,4 +862,53 @@ img {
 
 .follow_scroll {
     position: fixed;
+}
+
+#quick_view_picture {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    /*background-color: #ffffff;*/
+}
+
+.quick_data {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: auto;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    /*background-color: #ffffff;*/
 }

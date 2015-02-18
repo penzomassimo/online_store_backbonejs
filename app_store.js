@@ -12,10 +12,8 @@ var STORE = {
         collections: {},
         views: {},
         router: {}
-    },
-    my_functions:{}
+    }
 };
-
 
 //  DEFINING CONSTRUCTORS FOR THE APP
 
@@ -47,7 +45,7 @@ STORE.my_constructors.models.CheckoutFormData = Backbone.Model.extend({
 
 //  COLLECTIONS
 
-//  note: we will create three catalog (man, woman, kid)
+//  note: we will create three catalogs (man, woman, kid)
 STORE.my_constructors.collections.Catalog = Backbone.Collection.extend({
     model: STORE.my_constructors.models.Product,
     initialize: function(){
@@ -94,7 +92,7 @@ STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
         'click .quick_view': 'showQuickView'
     },
     addToBag: function(){
-        this.$el.fadeTo( "slow" , 0.5, function() {});
+        //this.$el.fadeTo( "slow" , 0.5, function() {});
         if (STORE.my_objects.collections.myBag.contains(this.model)){
             /*increase quantity property*/
             var index = _.indexOf(STORE.my_objects.collections.myBag.models, this.model);
@@ -131,7 +129,21 @@ STORE.my_constructors.views.QuickLook = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(this.model.toJSON()));
         return this;
-    }
+    }/*,
+     events: {
+     'mouseover .zoom': 'startMagnifier'
+     },
+     startMagnifier: function(){
+     $('.zoom').okzoom({
+     width: 250,
+     height: 250,
+     round: true,
+     background: "#000000",
+     backgroundRepeat: "no-repeat",
+     shadow: "0 0 0px #000",
+     border: "1px solid black"
+     });
+     }*/
 });
 STORE.my_constructors.views.ShoppingCartSummary = Backbone.View.extend({
     el: '#shopping_container',
@@ -325,8 +337,6 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
 
     }
 });
-
-
 
 // some products for the catalog
 STORE.my_objects.models.item1 = new STORE.my_constructors.models.Product({name: 'shirt1', description: 'desc1', price: 10});
