@@ -60,7 +60,11 @@ STORE.my_constructors.collections.Bag = Backbone.Collection.extend({
         this.on('add', this.refresh);
     },
     refresh: function(){
-        console.log('the has been refreshed');
+        STORE.my_objects.views.HeaderSummary.refresh();
+/*
+        STORE.my_objects.views.HeaderSummary.render();
+*/
+        /*STORE.my_objects.views.HeaderSummary.render();*/
     },
     getBagTotal: function(){
         var total = _.reduce(this.models, function(accumulator, item){
@@ -126,6 +130,9 @@ STORE.my_constructors.views.SingleProduct = Backbone.View.extend({
         }
         STORE.my_objects.views.BagSummary.$el.html('');
         STORE.my_objects.views.BagSummary.render();
+        STORE.my_objects.views.HeaderSummary.refresh();
+
+
     },
     showQuickView: function(){
         STORE.my_objects.views.Quick_view = new STORE.my_constructors.views.QuickLook(
@@ -197,6 +204,7 @@ STORE.my_constructors.views.ShoppingCartItem = Backbone.View.extend({
         STORE.my_objects.collections.myBag.remove(this.model);
         console.log('ELEMENT REMOVED');
         console.log(STORE.my_objects.collections.myBag.toJSON());
+        STORE.my_objects.views.HeaderSummary.refresh();
     },
     increaseQty: function(){
         console.log('qty increased');   //TODO this still needs some work.
@@ -263,6 +271,35 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
     }
 });
 
+STORE.my_constructors.views.SessionSummary = Backbone.View.extend({
+    el: '#user_session',
+    initialize: function(){
+        this.render();
+    },
+    template: _.template($("#session_summary").html()),
+    render: function(){
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    },
+    refresh: function(){
+        var myMod = Backbone.Model.extend({
+            defaults: {
+                qty: STORE.my_objects.collections.myBag.getNumberOfItems()
+            }
+        });
+
+        var t = new myMod();
+        //  creating the summary view at the header
+        STORE.my_objects.views.HeaderSummary = new STORE.my_constructors.views.SessionSummary(
+            {
+                model: t
+            }
+        );
+        STORE.my_objects.views.HeaderSummary.$el.html('');
+        STORE.my_objects.views.HeaderSummary.render();
+    }
+});
+
 //  ROUTER
 STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     routes: {
@@ -286,6 +323,26 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         );
         STORE.my_objects.views.Man_CatalogContainer.$el.html('');
         STORE.my_objects.views.Man_CatalogContainer.render();
+
+        var myMod = Backbone.Model.extend({
+            defaults: {
+                qty: STORE.my_objects.collections.myBag.getNumberOfItems()
+            }
+        });
+
+        var t = new myMod();
+        //  creating the summary view at the header
+        STORE.my_objects.views.HeaderSummary = new STORE.my_constructors.views.SessionSummary(
+            {
+               model: t
+            }
+        );
+        STORE.my_objects.views.HeaderSummary.$el.html('');
+        STORE.my_objects.views.HeaderSummary.render();
+
+
+
+
         console.log('route man working');
     },
     handleRoute2: function(){
@@ -399,6 +456,7 @@ STORE.my_objects.views.BagSummary = new STORE.my_constructors.views.ShoppingCart
 
 //  creating the form data object
 STORE.my_objects.models.FormData = new STORE.my_constructors.models.CheckoutFormData;
+
 
 console.log(_.size(STORE.my_objects.collections.Man_Catalog));
 console.log(_.size(STORE.my_objects.collections.Woman_Catalog));

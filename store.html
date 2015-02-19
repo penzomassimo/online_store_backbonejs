@@ -11,10 +11,7 @@
 
 <div id="header">
     <div id="logo"><a href="#">myShirts</a></div>
-    <div id="user_session">
-        <div id="bag">bag:</div>
-        <div id="wishList">wishlist:</div>
-    </div>
+    <div id="user_session"></div>
 </div>
 
 <div id="left">
@@ -34,6 +31,12 @@
 
 
 <!--view templates-->
+
+<script type="text/template" id="session_summary">
+    <div id="bag">bag: <span><%= qty %></span></div>
+</script>
+
+
 <script type="text/template" id="checkout_form_template">
     <div id="form_wrapper" class="animated bounceInLeft">
         <div>Name_</div>
