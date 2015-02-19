@@ -61,7 +61,23 @@ STORE.my_constructors.collections.Bag = Backbone.Collection.extend({
     },
     refresh: function(){
         console.log('the has been refreshed');
+    },
+    getBagTotal: function(){
+        var total = _.reduce(this.models, function(accumulator, item){
+            accumulator = accumulator + (item.get('quantity')*item.get('price'));
+            return accumulator;
+        },0);
+        return total;
+    },
+    getNumberOfItems: function(){
+        var numItems = _.reduce(this.models, function(accumulator, item){
+            accumulator = accumulator + item.get('quantity');
+            return accumulator;
+        },0);
+        return numItems;
     }
+
+
 });
 
 //  VIEWS
