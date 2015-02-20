@@ -270,7 +270,6 @@ STORE.my_constructors.views.CheckoutForm = Backbone.View.extend({
         /*STORE.my_objects.views.BagSummary.render();*/
     }
 });
-
 STORE.my_constructors.views.SessionSummary = Backbone.View.extend({
     el: '#user_session',
     initialize: function(){
@@ -284,7 +283,8 @@ STORE.my_constructors.views.SessionSummary = Backbone.View.extend({
     refresh: function(){
         var myMod = Backbone.Model.extend({
             defaults: {
-                qty: STORE.my_objects.collections.myBag.getNumberOfItems()
+                qty: STORE.my_objects.collections.myBag.getNumberOfItems(),
+                tot: STORE.my_objects.collections.myBag.getBagTotal()
             }
         });
 
@@ -326,7 +326,8 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
 
         var myMod = Backbone.Model.extend({
             defaults: {
-                qty: STORE.my_objects.collections.myBag.getNumberOfItems()
+                qty: STORE.my_objects.collections.myBag.getNumberOfItems(),
+                tot: STORE.my_objects.collections.myBag.getBagTotal()
             }
         });
 
@@ -370,7 +371,6 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     handleRoute4: function(){
         STORE.my_objects.views.myMap = new STORE.my_constructors.views.Map({el: '#right'});
         STORE.my_objects.map = L.map('map').setView([51.505, -0.09], 8);
-
         L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png',
             {
                 attribution: '',
@@ -379,11 +379,10 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
                 maxZoom: 20
             }
         ).addTo(STORE.my_objects.map);
-
         L.marker([51.5, -0.09]).addTo(STORE.my_objects.map);
         L.marker([52.0, -0.20]).addTo(STORE.my_objects.map);
         L.marker([51.0, -0.20]).addTo(STORE.my_objects.map);
-
+        STORE.my_objects.views.Quick_view.$el.empty();
         console.log('route stores working');
     },
     handleRoute5: function(){
