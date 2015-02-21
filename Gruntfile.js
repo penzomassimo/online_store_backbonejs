@@ -11,12 +11,12 @@ module.exports = function(grunt) {
             dist_folder: {
                 files: [{
                     src: [
-                        'dist/{,}*',
-                        'foo/{,}*'
+                        'dist/{,}*'
                     ]
                 }]
             }
         },
+/*
         wiredep: {
             inject_bower: {
                 src: ['index.html']
@@ -33,6 +33,7 @@ module.exports = function(grunt) {
                 }]
             }
         },
+*/
         concat:{
             basic: {
                 src: ['js/views/cartcollectionview.js', 'js/views/itemcollectionview.js'],

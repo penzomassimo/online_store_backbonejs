@@ -493,7 +493,7 @@ isa.done(function(data){
     console.log(data);
 });
 
-
+console.log('final debugging point');
 //GEOLOCATION TEST
 /*
  if ("geolocation" in navigator) {
