@@ -16,9 +16,11 @@
 </div>
 
 <div id="left">
-    <div class="menu_item"><a href="#man">Shop Man</a></div>
+    <div class="menu_item">
+        <a href="#man">Shop Man</a></div>
     <div class="menu_item"><a href="#woman">Shop Woman</a></div>
-    <div class="menu_item"><a href="#kid">Shop Kid</a></div>
+    <div class="menu_item">
+        <a href="#kid">Shop Kid</a></div>
     <div class="menu_item"><a href="#stores">Stores</a></div>
     <div id="shopping_title">
         <div id="title_left">BAG:</div>
@@ -29,7 +31,6 @@
 
 <div id="right"></div>
 <div id="quick"></div>
-
 
 <!--view templates-->
 
@@ -57,7 +58,7 @@
 <script type="text/template" id="quick_view_template">
     <div class="quick_data animated bounceInRight">
         <div id="quick_view_picture">
-            <img class="zoom" src="assets/woman_shirt.jpg" alt=""/>
+            <img class="zoom" src="<%= pic_url %>" alt=""/>
         </div>
         <div><%= name %></div>
         <div>$_<%= price %></div>
@@ -79,10 +80,10 @@
 </script>
 
 <script type="text/template" id="product_template">
-    <div class="product animated bounceInUp">
+    <div class="product">
         <div class="picture">
             <div class="add">ADD 2 BAG</div>
-            <img src="assets/woman_shirt.jpg" alt=""/>
+            <img src="<%= pic_url %>" alt=""/>
             <div class="quick_view">
                 <img src="assets/quick_view.gif" alt=""/>
             </div>

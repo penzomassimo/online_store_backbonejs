@@ -309,7 +309,87 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         "kid": "handleRoute3",
         "stores": "handleRoute4",
         "check": "handleRoute5",
-        '*path':  'handleRoute1' // this is the default route
+        /*'*path':  "handleRoute1",*/ // this is the default route
+         "": "handleInitRoute"
+    },
+    handleInitRoute: function(){
+        //  populating the catalogs
+        var man = $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog",
+                type: 'GET',
+                dataType: 'json', // the type of data you are expecting from the server
+                data: {                 //  parameters to be sent with the request
+                    name : "The name",
+                    desc : "The description"
+                }
+            }
+        );
+
+        var woman = $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/woman_catalog",
+                type: 'GET',
+                dataType: 'json', // the type of data you are expecting from the server
+                data: {                 //  parameters to be sent with the request
+                    name : "The name",
+                    desc : "The description"
+                }
+            }
+        );
+
+        var kid = $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/kid_catalog",
+                type: 'GET',
+                dataType: 'json', // the type of data you are expecting from the server
+                data: {                 //  parameters to be sent with the request
+                    name : "The name",
+                    desc : "The description"
+                }
+            }
+        );
+
+        man.done(function(data){
+            STORE.my_objects.collections.Man_Catalog.add(data);
+            console.log(data);
+            STORE.my_objects.views.Man_CatalogContainer = new STORE.my_constructors.views.CatalogContainer(
+                {
+                    el: '#right',
+                    collection: STORE.my_objects.collections.Man_Catalog
+                }
+            );
+            STORE.my_objects.views.Man_CatalogContainer.$el.html('');
+            STORE.my_objects.views.Man_CatalogContainer.render();
+        });
+
+        woman.done(function(data){
+            STORE.my_objects.collections.Woman_Catalog.add(data);
+            console.log(data);
+        });
+
+        kid.done(function(data){
+            STORE.my_objects.collections.Kid_Catalog.add(data);
+            console.log(data);
+        });
+
+        var myMod = Backbone.Model.extend({
+            defaults: {
+                qty: STORE.my_objects.collections.myBag.getNumberOfItems(),
+                tot: STORE.my_objects.collections.myBag.getBagTotal()
+            }
+        });
+
+        var t = new myMod();
+        //  creating the summary view at the header
+        STORE.my_objects.views.HeaderSummary = new STORE.my_constructors.views.SessionSummary(
+            {
+                model: t
+            }
+        );
+        STORE.my_objects.views.HeaderSummary.$el.html('');
+        STORE.my_objects.views.HeaderSummary.render();
+
     },
     handleRoute0: function(){
         console.log('route home working');
@@ -410,19 +490,6 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     }
 });
 
-// some products for the catalog
-STORE.my_objects.models.item1 = new STORE.my_constructors.models.Product({name: 'shirt1', description: 'desc1', price: 10});
-STORE.my_objects.models.item2 = new STORE.my_constructors.models.Product({name: 'shirt2', description: 'desc2', price: 20});
-STORE.my_objects.models.item3 = new STORE.my_constructors.models.Product({name: 'shirt3', description: 'desc3', price: 30});
-STORE.my_objects.models.item4 = new STORE.my_constructors.models.Product({name: 'shirt4', description: 'desc4', price: 40});
-STORE.my_objects.models.item5 = new STORE.my_constructors.models.Product({name: 'shirt5', description: 'desc5', price: 50});
-STORE.my_objects.models.item6 = new STORE.my_constructors.models.Product({name: 'shirt6', description: 'desc6', price: 60});
-STORE.my_objects.models.item7 = new STORE.my_constructors.models.Product({name: 'shirt7', description: 'desc7', price: 70});
-STORE.my_objects.models.item8 = new STORE.my_constructors.models.Product({name: 'shirt8', description: 'desc8', price: 80});
-STORE.my_objects.models.item9 = new STORE.my_constructors.models.Product({name: 'shirt9', description: 'desc9', price: 90});
-STORE.my_objects.models.item10 = new STORE.my_constructors.models.Product({name: 'shirt10', description: 'desc10', price: 100});
-STORE.my_objects.models.item11 = new STORE.my_constructors.models.Product({name: 'shirt11', description: 'desc11', price: 110});
-
 //  creating the bag
 STORE.my_objects.collections.myBag = new STORE.my_constructors.collections.Bag;
 
@@ -430,25 +497,6 @@ STORE.my_objects.collections.myBag = new STORE.my_constructors.collections.Bag;
 STORE.my_objects.collections.Man_Catalog = new STORE.my_constructors.collections.Catalog();
 STORE.my_objects.collections.Woman_Catalog = new STORE.my_constructors.collections.Catalog();
 STORE.my_objects.collections.Kid_Catalog = new STORE.my_constructors.collections.Catalog();
-
-//  populating the catalogs
-STORE.my_objects.collections.Man_Catalog.add([
-    STORE.my_objects.models.item1,
-    STORE.my_objects.models.item2,
-    STORE.my_objects.models.item3,
-
-]);
-STORE.my_objects.collections.Woman_Catalog.add([
-    STORE.my_objects.models.item4,
-    STORE.my_objects.models.item5
-]);
-STORE.my_objects.collections.Kid_Catalog.add([
-    STORE.my_objects.models.item6,
-    STORE.my_objects.models.item7,
-    STORE.my_objects.models.item8,
-    STORE.my_objects.models.item9,
-    STORE.my_objects.models.item10
-]);
 
 
 STORE.my_objects.views.BagSummary = new STORE.my_constructors.views.ShoppingCartSummary;
@@ -468,32 +516,7 @@ STORE.my_objects.router.StoreRouter = new STORE.my_constructors.router.AppRouter
 Backbone.history.start(); //    this line is necessary for the router to work
 
 
-var isa = $.ajax(
-    {
-        url:"http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog",
-        type: 'GET',
-        dataType: 'json', // the type of data you are expecting from the server
-        data: {                 //  parameters to be sent with the request
-            name : "The name",
-            desc : "The description"
-        }
-    }
-);
 
-
-
-isa.done(function(data){
-    STORE.my_objects.collections.TESTCAT = new STORE.my_constructors.collections.Catalog();
-    STORE.my_objects.collections.TESTCAT.add(data);
-    console.log(data);
-});
-
-isa.done(function(data){
-    STORE.my_objects.collections.Man_Catalog.add(data);
-    console.log(data);
-});
-
-console.log('final debugging point');
 //GEOLOCATION TEST
 /*
  if ("geolocation" in navigator) {
