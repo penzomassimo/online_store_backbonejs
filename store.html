@@ -11,7 +11,7 @@
 <body>
 
 <div id="header">
-    <div id="logo"><a href="#">myShirts</a></div>
+    <div id="logo"><a href="#">myshirts.com</a></div>
     <div id="user_session"></div>
 </div>
 
@@ -26,7 +26,7 @@
         <div id="title_left">BAG:</div>
         <div id="checkout"><a href="#check">checkout</a></div>
     </div>
-    <div id="shopping_container"></div>
+    <div id="shopping_container">your bag is empty !!</div>
 </div>
 
 <div id="right"></div>
@@ -35,7 +35,10 @@
 <!--view templates-->
 
 <script type="text/template" id="session_summary">
-    <div id="bag">bag: <span><%= qty %>   </span> TOTAL: <span>$_<%= tot %></span></div>
+    <div id="bag">
+        <div id="bagqty">#items: <%= qty %></div>
+        <div id="bagtotal">total: $<%= tot %></div>
+    </div>
 </script>
 
 
