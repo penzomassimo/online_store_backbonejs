@@ -42,7 +42,17 @@ STORE.my_constructors.models.CheckoutFormData = Backbone.Model.extend({
         credit_card_number: 'NO CREDIT CARD NUMBER'
     }
 });
-
+STORE.my_constructors.models.RegistrationFormData = Backbone.Model.extend({
+    initialize: function(){
+        console.log('THE REGISTRATION FORM DATA OBJECT HAS BEEN CREATED');
+    },
+    defaults: {
+        name: 'NO NAME',
+        last_name: 'NO LAST NAME',
+        email: 'NO EMAIL',
+        password: 'NO PASSWORD'
+    }
+});
 //  COLLECTIONS
 
 //  note: we will create three catalogs (man, woman, kid)
@@ -300,6 +310,43 @@ STORE.my_constructors.views.SessionSummary = Backbone.View.extend({
     }
 });
 
+STORE.my_constructors.views.RegisterForm = Backbone.View.extend({
+    el: '#quick',
+    initialize: function(){
+        this.render();
+    },
+    template: _.template($("#register_form_template").html()),
+    render: function(){
+        this.$el.html(this.template);
+        return this;
+    },
+    events: {
+        'click #registration_btn': 'sendRegistrationData'
+    },
+    sendRegistrationData: function(){
+
+        var data = {
+            name: $("[name='name']").val(),
+            lastname: $("[name='lastname']").val(),
+            email: $("[name='email']").val(),
+            password: $("[name='password']").val()
+        };
+
+        console.log(JSON.stringify(data));
+        $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/registration",
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: JSON.stringify(data)
+            }
+        );
+        this.$el.html('You have been registered');
+
+    }
+});
+
 //  ROUTER
 STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     routes: {
@@ -310,7 +357,9 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         "stores": "handleRoute4",
         "check": "handleRoute5",
         /*'*path':  "handleRoute1",*/ // this is the default route
-         "": "handleInitRoute"
+         "": "handleInitRoute",
+        "register": "handleRegister",
+        "login": "handleLogin"
     },
     handleInitRoute: function(){
         //  populating the catalogs
@@ -487,6 +536,14 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
             console.log('Request 2 Completed');
         });
 
+    },
+    handleRegister: function(){
+        console.log('register route working');
+        STORE.my_objects.RegistrationForm = new STORE.my_constructors.views.RegisterForm();
+
+    },
+    handleLogin: function(){
+        console.log('login route working');
     }
 });
 

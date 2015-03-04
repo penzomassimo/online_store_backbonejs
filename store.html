@@ -12,6 +12,10 @@
 
 <div id="header">
     <div id="logo"><a href="#">myshirts.com</a></div>
+    <div id="userlogin">
+        <div id="register_link"><a href="#register">register</a></div>
+        <div id="login_link"><a href="#login">login</a></div>
+    </div>
     <div id="user_session"></div>
 </div>
 
@@ -33,6 +37,22 @@
 <div id="quick"></div>
 
 <!--view templates-->
+<script type="text/template" id="register_form_template">
+    <div id="form_wrapper" class="animated bounceInRight">
+        <p>REGISTRATION FORM:</p>
+        <div>Name_</div>
+        <div><input name="name" type="text" class="form_input"/></div>
+        <div>Last Name_</div>
+        <div><input name="lastname" type="text" class="form_input"/></div>
+        <div>Email_</div>
+        <div><input name="email" type="text" class="form_input"/></div>
+        <div>Password_</div>
+        <div><input name="password" type="password" class="form_input"/></div>
+        <div id="registration_btn">Register</div>
+    </div>
+</script>
+
+
 
 <script type="text/template" id="session_summary">
     <div id="bag">

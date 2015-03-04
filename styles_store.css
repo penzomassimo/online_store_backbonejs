@@ -54,7 +54,7 @@ body {
     display: block; /*default display for div tags*/
 
     /*size*/
-    height: auto;
+    height: 100px;
     width: 100%;
 
     /*box model*/
@@ -106,7 +106,7 @@ body {
 
     /*size*/
     height: auto;
-    width: 46%;
+    width: 50%;
 
     /*box model*/
     margin: 5px 0px 0px 5px;
@@ -130,11 +130,13 @@ body {
 
     /*size*/
     height: 100%;
-    width: auto;
+    width: 30%;
 
     /*box model*/
     margin: 0px 0px 0px 0px;
-    /*border: 1px dotted #000000;*/
+/*
+    border: 1px dotted #000000;
+*/
     padding: 0px 0px 0px 0px;
 
 
@@ -159,11 +161,11 @@ body {
 
     /*size*/
     height: 100%;
-    width: 50%;
+    width: 10%;
 
     /*box model*/
     margin: 0px 0px 0px 0px;
-    /*border: 1px dotted #000000;*/
+    border: 1px dotted #000000;
     padding: 0px 0px 0px 0px;
 
 
@@ -317,7 +319,7 @@ img {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    float: right;
+    float: left;
 
 
     /*display*/
@@ -325,11 +327,11 @@ img {
 
     /*size*/
     height: 100%;
-    width: 30%;
+    width: 100%;
 
     /*box model*/
     margin: 0px 0px 0px 0px;
-   /* border: 1px dotted #000000;*/
+    border: 1px dotted #000000;
     padding: 0px 0px 0px 0px;
 
 
@@ -783,7 +785,7 @@ img {
 
     /*size*/
     height: 800px;
-    width: 30%;
+    width: 25%;
 
     /*box model*/
     margin: 5px 0px 0px 5px;
@@ -792,7 +794,6 @@ img {
     padding: 0px 0px 0px 0px;
 
     font-family: 'Anton', sans-serif;
-    font-size: 50px;
 
 
 
@@ -914,4 +915,111 @@ img {
     padding: 0px 0px 0px 0px;
 
     /*background-color: #ffffff;*/
+}
+
+#userlogin {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: right;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 100%;
+    width: 20%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    border: 1px dotted #000000;
+    padding: 0px 0px 0px 0px;
+
+    /*background-color: #ffffff;*/
+
+}
+
+#register_link {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50%;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    border: 1px dotted #000000;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+
+}
+
+#login_link {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 50%;
+    width: 100%;
+
+    /*box model*/
+    margin: 0px 0px 0px 0px;
+    border: 1px dotted #000000;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Anton', sans-serif;
+    /*background-color: #ffffff;*/
+
+}
+
+#registration_btn {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 30px;
+    width: 50%;
+
+    /*box model*/
+    margin: 20px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 7px;
 }
