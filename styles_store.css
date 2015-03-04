@@ -1023,3 +1023,33 @@ img {
     text-align: center;
     border-radius: 7px;
 }
+
+#login_btn {
+    /*positioning*/
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+
+
+    /*display*/
+    display: block; /*default display for div tags*/
+
+    /*size*/
+    height: 30px;
+    width: 50%;
+
+    /*box model*/
+    margin: 20px 0px 0px 0px;
+    /*border: 1px dotted #000000;*/
+    padding: 0px 0px 0px 0px;
+
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 7px;
+
+}

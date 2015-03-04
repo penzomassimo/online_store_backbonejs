@@ -309,7 +309,6 @@ STORE.my_constructors.views.SessionSummary = Backbone.View.extend({
         STORE.my_objects.views.HeaderSummary.render();
     }
 });
-
 STORE.my_constructors.views.RegisterForm = Backbone.View.extend({
     el: '#quick',
     initialize: function(){
@@ -345,6 +344,40 @@ STORE.my_constructors.views.RegisterForm = Backbone.View.extend({
         this.$el.html('You have been registered');
 
     }
+});
+STORE.my_constructors.views.LoginForm = Backbone.View.extend({
+    el: '#quick',
+    initialize: function(){
+        this.render();
+    },
+    template: _.template($("#login_form_template").html()),
+    render: function(){
+        this.$el.html(this.template);
+        return this;
+    },
+    events: {
+        'click #login_btn': 'sendLoginData'
+    },
+    sendLoginData: function(){
+        var data = {
+            email: $("[name='email']").val(),
+            password: $("[name='password']").val()
+        };
+        console.log(JSON.stringify(data));
+       /* $.ajax(
+            {
+                url:"http://localhost:8080/max/webapi/storeRESTendpoint/registration",
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: JSON.stringify(data)
+            }
+        );
+       */ this.$el.html('You are now logged in');
+
+        console.log('login sent');
+    }
+
 });
 
 //  ROUTER
@@ -544,6 +577,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
     },
     handleLogin: function(){
         console.log('login route working');
+        STORE.my_objects.LoginForm = new STORE.my_constructors.views.LoginForm();
     }
 });
 
