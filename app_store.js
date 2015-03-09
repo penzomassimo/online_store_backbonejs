@@ -334,7 +334,7 @@ STORE.my_constructors.views.RegisterForm = Backbone.View.extend({
         console.log(JSON.stringify(data));
         $.ajax(
             {
-                url:"http://localhost:8080/max/webapi/storeRESTendpoint/registration",
+                url:"http://10.0.0.3:8080/max/webapi/storeRESTendpoint/registration",
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
@@ -398,7 +398,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
         //  populating the catalogs
         var man = $.ajax(
             {
-                url:"http://localhost:8080/max/webapi/storeRESTendpoint/man_catalog",
+                url:"http://10.0.0.3:8080/max/webapi/storeRESTendpoint/man_catalog",
                 type: 'GET',
                 dataType: 'json', // the type of data you are expecting from the server
                 data: {                 //  parameters to be sent with the request
@@ -410,7 +410,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
 
         var woman = $.ajax(
             {
-                url:"http://localhost:8080/max/webapi/storeRESTendpoint/woman_catalog",
+                url:"http://10.0.0.3:8080/max/webapi/storeRESTendpoint/woman_catalog",
                 type: 'GET',
                 dataType: 'json', // the type of data you are expecting from the server
                 data: {                 //  parameters to be sent with the request
@@ -422,7 +422,7 @@ STORE.my_constructors.router.AppRouter = Backbone.Router.extend({
 
         var kid = $.ajax(
             {
-                url:"http://localhost:8080/max/webapi/storeRESTendpoint/kid_catalog",
+                url:"http://10.0.0.3:8080/max/webapi/storeRESTendpoint/kid_catalog",
                 type: 'GET',
                 dataType: 'json', // the type of data you are expecting from the server
                 data: {                 //  parameters to be sent with the request
