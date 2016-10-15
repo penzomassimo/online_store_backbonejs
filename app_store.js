@@ -1,4 +1,4 @@
-sddss
+
 //  DEFINING NAMESPACE FOR THE APP
 var STORE = {
     my_constructors: {
